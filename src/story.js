@@ -1,5 +1,5 @@
 runner = async (driver) => {
-    const log = [`[TESTING] login-form: ${Date.now}`];
+    const log = [`[TESTING] login-form: ${Date.now()}`];
 
     try {
         const url = 'http://crossbrowsertesting.github.io/login-form.html';
@@ -7,7 +7,7 @@ runner = async (driver) => {
         await driver.get(url);
 
         log.push['[TRYING] snapshot'];
-        await driver.takeSnapshot();
+        //await driver.takeSnapshot();
 
         log.push['[TRYING] send username to field'];
         await driver.findElement(webdriver.By.id("username")).sendKeys("tester@crossbrowsertesting.com");
@@ -17,7 +17,7 @@ runner = async (driver) => {
         await driver.findElement(webdriver.By.xpath("//*[@type=\"password\"]")).sendKeys("test123");
 
         log.push['[TRYING] snapshot'];
-        driver.takeSnapshot();
+        //driver.takeSnapshot();
 
         log.push['[TRYING] submit form'];
         await driver.findElement(webdriver.By.css("button[type=submit]")).click();
@@ -25,7 +25,7 @@ runner = async (driver) => {
         log.push['[TRYING] verify results'];
         await driver.wait(webdriver.until.elementLocated(webdriver.By.id("logged-in-message")), 10000);
 
-        await driver.takeSnapshot();
+        //await driver.takeSnapshot();
 
         log.push['[TRYING] close down'];
         await driver.quit();
@@ -33,7 +33,7 @@ runner = async (driver) => {
         log.push[`[ERROR] ${e}`]
     }
 
-    log[`[DONE] login-form:  ${Date.now}`];
+    log[`[DONE] login-form:  ${Date.now()}`];
 
     return log;
 };
