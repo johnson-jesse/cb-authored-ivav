@@ -1,4 +1,4 @@
-runner = (driver) => {
+runner = async (driver) => {
     const log = [`[TESTING] login-form: ${Date.now}`];
 
     try {
