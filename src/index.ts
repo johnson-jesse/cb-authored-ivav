@@ -1,14 +1,14 @@
 // import { webdriver } from 'selenium-webdriver';
 
-const utcNow = () => new Date().toUTCString();
+const utcNow = (): string => new Date().toUTCString();
 const timeInSeconds = (start: number): number => (Date.now() - start) / 1000;
-const mklog = (story: string, message: string) => `[${story}] ${utcNow()} ${message}`
+const mklog = (story: string, message: string): string => `[${story}] ${utcNow()} ${message}`
 
 var runner = {
     numberOfStories: 1,
 
     start: async (driver: any): Promise<string[]> => {
-        const results = [];
+        const results: string[] = [];
         const name = 'login-form';
         const start = Date.now();
         const url = 'http://crossbrowsertesting.github.io/login-form.html';
