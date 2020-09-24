@@ -7,8 +7,9 @@
         "target": "ES2016",
         "strict": true,
         "esModuleInterop": true,
-        "skipLibCheck": true
-
+        "skipLibCheck": true,
+        "moduleResolution": "Node",
+        "removeComments": true
     },
     "include": ["./src"]
 }

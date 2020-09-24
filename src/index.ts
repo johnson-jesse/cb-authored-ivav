@@ -1,4 +1,4 @@
-import webdriver from 'selenium-webdriver';
+// import webdriver from 'selenium-webdriver';
 import { nanoid } from 'nanoid';
 
 const options = {
