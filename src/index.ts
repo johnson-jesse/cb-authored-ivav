@@ -2,19 +2,25 @@
 
 const utcNow = () => new Date().toUTCString();
 const timeInSeconds = (start: number): number => (Date.now() - start) / 1000;
+const mklog = (story: string, message: string) => `[${story}] ${utcNow()} ${message}`
 
 var runner = {
     numberOfStories: 1,
 
     start: async (driver: any): Promise<string[]> => {
+        const results = [];
+        const name = 'login-form';
         const start = Date.now();
         const url = 'http://crossbrowsertesting.github.io/login-form.html';
+        const log = (message: string) => {
+            results.push(mklog(name, message));
+        };
     
-        const log = [`[login-form] started: ${utcNow()}`];
-        log.push(`[login-form] subject: ${url}`);
+        log('started');
+        log(`subject: ${url}`);
     
         try {
-            log.push(`[login-form] loading: ${utcNow()}`);
+            log(`loading`);
             await driver.get(url);
     
             //log.push('[TRYING] send username to field');
@@ -33,13 +39,13 @@ var runner = {
             //log.push('[TRYING] close down');
             //await driver.quit();
         } catch (e) {
-            log.push(`[login-form] error: ${e}`);
+            log(`error: ${e}`);
             //await driver.quit();
         }
     
-        log.push(`[login-form] finished at: ${utcNow()}`)
-        log.push(`[login-form] done in: ${timeInSeconds(start)} seconds`);
+       log(`finished in ${timeInSeconds(start)} seconds}`);
+
     
-        return log;
+        return results;
     }
 }
