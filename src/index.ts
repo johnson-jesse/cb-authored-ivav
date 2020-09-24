@@ -1,6 +1,6 @@
 // import { webdriver } from 'selenium-webdriver';
 
-let runner = async (driver: any): Promise<string[]> => {
+var runner = async (driver: any): Promise<string[]> => {
     const url = 'http://crossbrowsertesting.github.io/login-form.html';
 
     const log = [`[TESTING] login-form: ${Date.now()}`];
