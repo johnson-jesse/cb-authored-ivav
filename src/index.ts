@@ -55,6 +55,6 @@
 //     }
 // }
 
-export default {
+var story = {
     numberOfStories: 0
 }

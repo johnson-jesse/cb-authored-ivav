@@ -3,9 +3,9 @@
     "display": "Node 12",
     "compilerOptions": {
         "lib": ["ES2016"],
-        "module": "UMD",
+        "module": "None",
         "target": "ES2016",
-        "strict": true,
+        "strict": false,
         "esModuleInterop": true,
         "skipLibCheck": true,
         "moduleResolution": "node"
