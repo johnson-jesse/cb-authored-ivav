@@ -3,12 +3,12 @@
     "display": "Node 12",
     "compilerOptions": {
         "lib": ["ES2016"],
-        "module": "None",
+        // "module": "CommonJS",
         "target": "ES2016",
-        "strict": false,
+        "strict": true,
         "esModuleInterop": true,
-        "skipLibCheck": true,
-        "moduleResolution": "Node"
+        "skipLibCheck": true
+
     },
     "include": ["./src"]
 }
