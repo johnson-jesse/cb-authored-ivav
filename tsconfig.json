@@ -1,15 +1,27 @@
+// {
+//     "$schema": "https://json.schemastore.org/tsconfig",
+//     "display": "Node 12",
+//     "compilerOptions": {
+//         "lib": ["ES6"],
+//         "module": "CommonJS",
+//         "target": "ES6",
+//         "strict": true,
+//         "esModuleInterop": true,
+//         "skipLibCheck": true,
+//         "moduleResolution": "Node",
+//         "removeComments": true
+//     },
+//     "include": ["./src"]
+// }
+
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
-    "display": "Node 12",
     "compilerOptions": {
-        "lib": ["ES6"],
-        "module": "CommonJS",
-        "target": "ES6",
-        "strict": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "moduleResolution": "Node",
-        "removeComments": true
+      "module": "commonjs",
+      "esModuleInterop": true,
+      "target": "es6",
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "outDir": "dist"
     },
-    "include": ["./src"]
-}
+    "lib": ["es2015"]
+  }
