@@ -1,6 +1,6 @@
 // import { webdriver } from 'selenium-webdriver';
 
-const runner = async (driver: any): Promise<string[]> => {
+let runner = async (driver: any): Promise<string[]> => {
     const url = 'http://crossbrowsertesting.github.io/login-form.html';
 
     const log = [`[TESTING] login-form: ${Date.now()}`];
@@ -35,4 +35,4 @@ const runner = async (driver: any): Promise<string[]> => {
     return log;
 };
 
-const numberOfStories = 1;
+var numberOfStories = 1;
