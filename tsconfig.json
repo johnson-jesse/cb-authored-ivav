@@ -3,7 +3,7 @@
     "display": "Node 12",
     "compilerOptions": {
         "lib": ["ES2016"],
-        "module": "commonjs",
+        "module": "UMD",
         "target": "ES2016",
         "strict": true,
         "esModuleInterop": true,
