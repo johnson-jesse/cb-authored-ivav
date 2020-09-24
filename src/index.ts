@@ -1,6 +1,11 @@
 // import { webdriver } from 'selenium-webdriver';
 
-const utcNow = (): string => new Date().toUTCString();
+const options = {
+    year: 'numeric', month: 'numeric', day: 'numeric',
+    hour: 'numeric', minute: 'numeric', second: 'numeric',
+    hour12: false, timeZone: 'UTC', timeZoneName: 'short' };
+
+const utcNow = (): string => new Intl.DateTimeFormat('default', options).format(Date.now());
 const timeInSeconds = (start: number): number => (Date.now() - start) / 1000;
 const mklog = (story: string, message: string): string => `[${story}] ${utcNow()} ${message}`
 
