@@ -3,7 +3,7 @@
     "display": "Node 12",
     "compilerOptions": {
         "lib": ["ES6"],
-        "module": "System",
+        "module": "CommonJS",
         "target": "ES6",
         "strict": true,
         "esModuleInterop": true,
