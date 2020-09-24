@@ -1,4 +1,4 @@
-// import { webdriver } from 'selenium-webdriver';
+import webdriver from 'selenium-webdriver';
 
 const options = {
     year: 'numeric', month: 'numeric', day: 'numeric',
@@ -28,8 +28,8 @@ var runner = {
             log(`loading`);
             await driver.get(url);
     
-            //log.push('[TRYING] send username to field');
-            //await driver.findElement(webdriver.By.id("username")).sendKeys("tester@crossbrowsertesting.com");
+            log(`Sending username to field`);
+            await driver.findElement(webdriver.By.id("username")).sendKeys("tester@crossbrowsertesting.com");
     
             //log.push('[TRYING] send password to field');
             //send keys to element to enter text
