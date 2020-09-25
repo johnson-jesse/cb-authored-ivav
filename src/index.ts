@@ -10,7 +10,7 @@ const utcNow = (): string => new Intl.DateTimeFormat('en-US', options).format(Da
 const timeInSeconds = (start: number): number => (Date.now() - start) / 1000;
 const mklog = (story: string, message: string): string => `[${story}] ${utcNow()} ${message}`
 
-var runner = {
+const runner = {
     uuid: nanoid(),
     numberOfStories: 1,
 
@@ -57,3 +57,5 @@ var runner = {
         return results;
     }
 }
+
+export default runner;
