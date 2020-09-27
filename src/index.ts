@@ -1,7 +1,6 @@
 const webdriver = require('selenium-webdriver');
 const { nanoid } = require('nanoid');
 
-
 const options = {
     year: 'numeric', month: 'numeric', day: 'numeric',
     hour: 'numeric', minute: 'numeric', second: 'numeric',

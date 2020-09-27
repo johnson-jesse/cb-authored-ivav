@@ -5,21 +5,15 @@
   "license": "private",
   "private": true,
   "scripts": {
-    "build": "webpack --mode development --env.development --progress",
-    "build:prod": "webpack --mode production --env.production --progress"
+    "build": "rm -rf ./build && yarn tsc"
   },
   "dependencies": {
+    "@types/node": "^14.11.2",
     "nanoid": "^3.1.12",
     "selenium-webdriver": "^4.0.0-alpha.7"
   },
   "devDependencies": {
-    "@types/node": "^14.11.2",
     "@types/selenium-webdriver": "^4.0.9",
-    "@types/webpack": "^4.41.22",
-    "ts-loader": "^8.0.4",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.0.3",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
+    "typescript": "^4.0.3"
   }
 }
