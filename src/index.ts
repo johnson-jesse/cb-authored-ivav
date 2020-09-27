@@ -1,5 +1,6 @@
-// import webdriver from 'selenium-webdriver';
-import { nanoid } from 'nanoid';
+const webdriver = require('selenium-webdriver');
+const { nanoid } = require('nanoid');
+
 
 const options = {
     year: 'numeric', month: 'numeric', day: 'numeric',
@@ -58,4 +59,4 @@ const runner = {
     }
 }
 
-export default runner;
+module.exports = runner;
