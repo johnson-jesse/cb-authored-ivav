@@ -12,7 +12,7 @@ const mklog = (story, message) => `[${story}] ${utcNow()} ${message}`;
 const runner = {
     uuid: nanoid(),
     numberOfStories: 1,
-    start: async (driver) => {
+    accept: async (driver) => {
         const results = [];
         const name = 'login-form';
         const start = Date.now();
