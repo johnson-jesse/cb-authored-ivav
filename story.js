@@ -6,6 +6,7 @@ const options = {
     hour: 'numeric', minute: 'numeric', second: 'numeric',
     hour12: false, timeZone: 'UTC', timeZoneName: 'short'
 };
+// Exec
 const utcNow = () => new Intl.DateTimeFormat('en-US', options).format(Date.now());
 const timeInSeconds = (start) => (Date.now() - start) / 1000;
 const mklog = (story, message) => `[${story}] ${utcNow()} ${message}`;
