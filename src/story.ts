@@ -1,6 +1,7 @@
 import { By, until, WebDriver } from 'selenium-webdriver';
 import { nanoid } from 'nanoid';
 
+// This type should be removed and the imported version when available should be used
 type service = {
     driver: WebDriver;
     log(message: string): void;
@@ -28,10 +29,10 @@ export default {
             service.log('Sending password to field');
             await service.driver.findElement(By.xpath("//*[@type=\"password\"]")).sendKeys("test123");
     
-            //log.push('[TRYING] submit form');
+            service.log('submitting form');
             await service.driver.findElement(By.css("button[type=submit]")).click();
     
-            //log.push('[TRYING] verify results');
+            service.log('waiting on result');
             await service.driver.wait(until.elementLocated(By.id("logged-in-message")), 10000);
         } catch (e) {
             service.log(`error: ${e}`);
