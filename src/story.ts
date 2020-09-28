@@ -14,7 +14,7 @@ const runner = {
     uuid: nanoid(),
     numberOfStories: 1,
 
-    start: async (driver: any): Promise<string[]> => {
+    accept: async (driver: any): Promise<string[]> => {
         const results: string[] = [];
         const name = 'login-form';
         const start = Date.now();
