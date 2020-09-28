@@ -8,7 +8,7 @@ const options = {
 
 const utcNow = (): string => new Intl.DateTimeFormat('en-US', options).format(Date.now());
 const timeInSeconds = (start: number): number => (Date.now() - start) / 1000;
-const mklog = (story: string, message: string): string => `[${story}] ${utcNow()} ${message}`
+const mklog = (story: string, message: string): string => `[${story}] ${utcNow()} ${message}`;
 
 const runner = {
     uuid: nanoid(),
@@ -28,10 +28,10 @@ const runner = {
     
         try {
             log(`loading`);
-            ///await driver.get(url);
+            await driver.get(url);
     
-            //log(`Sending username to field`);
-            //await driver.findElement(webdriver.By.id("username")).sendKeys("tester@crossbrowsertesting.com");
+            log(`Sending username to field`);
+            await driver.findElement(webdriver.By.id("username")).sendKeys("tester@crossbrowsertesting.com");
     
             //webdriver.
             //log.push('[TRYING] send password to field');
