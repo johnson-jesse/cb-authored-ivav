@@ -1,5 +1,7 @@
-const webdriver = require('selenium-webdriver');
-const { nanoid } = require('nanoid');
+// const { WebDriver }  = require('selenium-webdriver');
+// const { nanoid } = require('nanoid');
+import { By, until, WebDriver } from 'selenium-webdriver';
+import { nanoid } from 'nanoid';
 
 const options = {
     year: 'numeric', month: 'numeric', day: 'numeric',
@@ -10,11 +12,15 @@ const utcNow = (): string => new Intl.DateTimeFormat('en-US', options).format(Da
 const timeInSeconds = (start: number): number => (Date.now() - start) / 1000;
 const mklog = (story: string, message: string): string => `[${story}] ${utcNow()} ${message}`;
 
-const runner = {
+type service = {
+    driver: WebDriver;
+}
+
+export default {
     uuid: nanoid(),
     numberOfStories: 1,
 
-    accept: async (service: any): Promise<string[]> => {
+    accept: async ({ driver }: service): Promise<string[]> => {
         const results: string[] = [];
         const name = 'login-form';
         const start = Date.now();
@@ -25,24 +31,22 @@ const runner = {
     
         log('started');
         log(`subject: ${url}`);
-        console.log('service', service);
-        const driver = service.driver;
     
         try {
             log(`loading`);
             await driver.get(url);
     
             log(`Sending username to field`);
-            await driver.findElement(webdriver.By.id("username")).sendKeys("tester@crossbrowsertesting.com");
+            await driver.findElement(By.id("username")).sendKeys("tester@crossbrowsertesting.com");
 
             log('Sending password to field');
-            await driver.findElement(webdriver.By.xpath("//*[@type=\"password\"]")).sendKeys("test123");
+            await driver.findElement(By.xpath("//*[@type=\"password\"]")).sendKeys("test123");
     
             //log.push('[TRYING] submit form');
-            await driver.findElement(webdriver.By.css("button[type=submit]")).click();
+            await driver.findElement(By.css("button[type=submit]")).click();
     
             //log.push('[TRYING] verify results');
-            await driver.wait(webdriver.until.elementLocated(webdriver.By.id("logged-in-message")), 10000);
+            await driver.wait(until.elementLocated(By.id("logged-in-message")), 10000);
         } catch (e) {
             log(`error: ${e}`);
             //await driver.quit();
@@ -54,5 +58,3 @@ const runner = {
         return results;
     }
 }
-
-module.exports = runner;
