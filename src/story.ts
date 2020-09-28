@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 type service = {
     driver: WebDriver;
     log(message: string): void;
-    name(name: string): void;
+    setName(name: string): void;
 }
 
 export default {
@@ -12,7 +12,7 @@ export default {
     numberOfStories: 1,
 
     accept: async (service: service) => {
-        service.name('login-form');
+        service.setName('login-form');
         const url = 'http://crossbrowsertesting.github.io/login-form.html';
     
         service.log('started');
